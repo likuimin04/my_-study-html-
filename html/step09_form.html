@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step09_form.html</title>
+</head>
+<body>
+    <h1>Form 요소 작성하기</h1>
+    <form action="login.jsp"> <!--모든건 date 이곳으로 이동이 된다. -->
+        <label for="email">이메일</label> <!-- 여기서 "for"와 "id"의 속성은 무조건 같아야한다. -->
+        <input type="text" id="email" name="email"> <!-- 여기서 type에다가 text를 작성하면 문자로 보이는형식으로 적용이 된다. -->
+        <label for="pwd">비밀번호</label> <!-- 여기서 "for"와 "id"의 속성은 무조건 같아야한다. -->
+        <input type="password" id="pwd" name="pwd"> <!-- 여기서 type에다가 password를 작성하면 문자로 보이지 않는 형식으로 적용이 된다. -->
+        <button type="submit">로그인</button>
+    </form>
+</body>
+</html>

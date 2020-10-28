@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step09_form2.html</title>
+</head>
+<body>
+    <h1>회원가입 Form 입니다.</h1>
+    <form action="signup.jsp">
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email"><dr/>
+        <fieldset>
+            <legend>성별 정보 선택</legend>
+            <label>
+                <input type="radio" name="gender" value="man" checked/>남자 <!-- "checked"는 코드를 작성해놓은 곳에 화면 출력 될 때 그부분에 체크가 되어 출력이 된다. -->
+            </label>
+            <label>
+                <input type="radio" name="gender" value="women"/> 여자 <!-- "radio"는 클릭 버튼 형식이로 된 요소이다. checkbox와 다르게 그룹으로 만들면 그중 하나만 선택이 가능하다. -->
+            </label>
+            <label>
+                <input type="radio" name="gender" value="no"/>모름 <!-- radio는 name이 달라지면 여러게의 체크가 가능해진다, 그럼으로 단일 체크로 사용할려면 한곳만 그룹화를 하여 작성해야 한다.-->
+            </label>
+        </fieldset>
+        <br/>
+        <fieldset>
+            <legend>취미 정보 선택</legend>
+            <label>
+                <input type="checkbox" name="hobby" value="piano"/> 피아노 <!--checkbox는 radio와 다르게 그룹으로 만들어도 여러 갯수를 선택 할 수 있다. 그리고 checkbox는 네모 모양으로 출력이 된다. -->
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="carom"/> 당구
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="beer"/> 맥주
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="etc"/> 기타
+            </label>
+        </fieldset>
+        <label for="job">직업선택</label>
+        <select name="job" id="job">
+            <option value="">선택</option>
+            <option value="teacher">선생님</option>
+            <option value="doctor">의사</option>
+            <option value="developer">개발자</option>
+            <option value="etx">기타</option>
+        </select>
+        <br/>
+        <br/>
+        <label for="lunch">점심 메뉴 선택</label>
+        <select name="lunch" id="lunch" multiple> <!-- multiple로 설정을 하면 마우스로 클릭해서 보는 형식이 아닌 설정 순서대로 나열해서 나오는 형식으로 출력이 된다.-->
+            <option value="">선택</option>
+            <option value="m1">짜장면</option>
+            <option value="m2">짬뽕</option>
+            <option value="m3">군만두</option>
+            <option value="m4">탕수육</option>
+        </select>
+        <br/>
+        <br/>
+        <button type="submit">가입</button>
+        <button type="reset">취소</button> <!-- 여기서 type에 "reset" 을 설정함으로 다시 초기화하여 원상태로 돌려놓는다. -->
+    </form>
+</body>
+</html>

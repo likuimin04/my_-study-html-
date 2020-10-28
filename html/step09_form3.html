@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>step09_form3.html</title>
     <style>
-        .container{
-            width: 769px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: darkseagreen;
+        .container{        /* CSS style에다가 container를 넣어야 밑에 내용들이 적용이 된다. */
+            width: 769px; /*폭 조정 용도 */
+            margin-left: auto; /* margin 왼쪽 auto로 정렬 설정 */
+            margin-right: auto; /* margin 오른쪽 auto로 정렬 설정 */
+            background-color: darkseagreen; /* background(백그라운드) 색상 설정 */
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container">  <!-- css와 호환 할때 여기에 적용을 해야 위에 style과 호환이 된다. -->
         클래스 속성의 값이 container 인 div 입니다.
     </div>
     <div>
         그냥 div 입니다.
     </div>
-    <div class="container">
+    <div class="container">  <!-- css와 호환 할때 여기에 적용을 해야 위에 style과 호환이 된다. -->
         <h1>tanle 요소를 이용해서 form 요소의 줄 맞추기</h1>
-    <form action="login.jsp">
-        <table>
+    <form action="login.jsp"> <!-- from에 설정 된것을 "login.jsp" 여기로 저장이 된다. 그 위치를 작성하는 곳 "action" -->
+        <table> <!-- form 안에 table을 넣는 이유는 웹 브라우저에서 정렬을 하기 위함이다. -->
             <tr>
                 <td> <label for="email">이메일</label></td>
                 <td><input type="text" name="email" id="email"/></td>

@@ -50,12 +50,36 @@
         <br/>
         <label for="lunch">점심 메뉴 선택</label>
         <select name="lunch" id="lunch" multiple> <!-- multiple로 설정을 하면 마우스로 클릭해서 보는 형식이 아닌 설정 순서대로 나열해서 나오는 형식으로 출력이 된다.-->
-            <option value="">선택</option>
-            <option value="m1">짜장면</option>
-            <option value="m2">짬뽕</option>
-            <option value="m3">군만두</option>
-            <option value="m4">탕수육</option>
+            <!-- option에서 요소에 value 가 없으면 innertext 가 value 로 전송이 된다. -->
+            <option>짜장면</option>
+            <option>짬뽕</option>
+            <option>군만두</option>
+            <option>탕수육</option>
+            <option>양장피</option>    
         </select>
+        <br/>
+        <br/>
+        <label for="coffee">커피 선택</label>
+        <select name="coffee" id="coffee">
+            <optgroup label="에스프레소"> <!-- optgrop 같은 경우 옵션을 그룹화 할수 있다. 밑에 참조 -->
+                <option>아메리카노</option>
+                <option>카페라떼</option>
+                <option>카페모카</option>
+            </optgroup>
+            <optgroup label="프라프치노">
+                <option>카라멜 프라프치노</option>
+                <option>자바칩 프라프치노</option>
+                <option>오렌지 프라프치노</option>
+            </optgroup>
+        </select>
+        <br/>
+        <br/>
+        <label for="file">첨부 파일</label> <!-- 파일 업로드 할수있는 선택 창을 생성한다.-->
+        <input type="file" id="file" name="file"/>
+        <br/>
+        <br/>
+        <label for="comment">하고 싶은 말</label><br/>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea> <!-- textarea는 글을 작성 할 수 있는 창을 생성 하는 것이다. 자주 쓰이는 곳은 컴플레인 창이나 뎃글 창을 생성 할 때 많이 사용 한다. -->
         <br/>
         <br/>
         <button type="submit">가입</button>

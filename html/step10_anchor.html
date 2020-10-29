@@ -27,6 +27,22 @@
             <li><a href="C:\acorn 2021\visual_work\html\step01_hello.html">hello.html 로 가기</a></li>
             <!-- 웹에서의 절대 경로 이동-->
             <li><a href="https://www.naver.com/">네이버로 가기</a></li>
+            <!-- 경로를 만들고 글짜가 아닌 이미지를 첨부하여 이미지를 클릭하면 하이퍼링크로 이동 하게 할수 있다. -->
+            <li><a href="http://14.63.164.99"><img src="images/kim1.png"/></li>
+            <!-- 윗 내용과 비슷하지만 여기에는 "이동하기"라는 문구가 추가 되어 Tap을 누르면 같이 선택이 된다. -->
+            <li>
+                <a href="http://14.63.164.99">
+                    <!--
+                        인라인 요소는 원래 블럭 요소를 자식 요소로 가질수 없다.
+                        단 a 요소만 예외적으로 div 같은 블럭요소를 자식 요소로
+                        가질수 있다.
+                    -->
+                    <div>
+                        <h3>이동하기</h3>
+                        <img src="images/kim1.png"/>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
     <by/>

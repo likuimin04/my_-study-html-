@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step10_anchor2.html</title>
+    <style>  /* css 디자인 요소의 구역 입니다. W:D:H 등 전체 높이 폭 넓이 등 설정 한 것 이다. */
+        .container{            /* 여기서 container의 width 그리고 margin을 설정 한 것 이다. */ 
+            width: 90%; /* 폭 */
+            margin-left: auto; /* margin 왼쪽 공간 */
+            margin-right: auto;  /* margin 오른쪽 공간 */
+        }
+        .spacer{               /* 여기서 spacer height 그리고 background 색깔을 설정 한 것 이다. */
+            height: 500px;    /* 높이 */
+            background-color: darksalmon;   /* 색깔 */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        alert('페이지가 로딩중...');  /* 여기도 자바스크립 영역이지만 이 위치에다가 설정을 하면 먼저 해석이 된다. */
+    </script>
+    <div class="container">  <!-- 밑 내용을 전부 정렬을 위해서 container안에 넣은 것 이다.-->
+        <h1>anchor 의 다른 기능</h1>
+        <ul>
+            <li><a href="#one">one</a></li>
+            <li><a href="#two">two</a></li>
+            <li><a href="#three">three</a></li>
+            <!-- 내가 작성한 필기: <a href="javascript: 여기작성 " 여기작성 위치가 자바스크립 구역이다. 그리고 이부분은 눌러야 해석이 된다. -->
+            <!-- javascript 실행-->
+            <li><a href="javascript:alert('hello~');">눌러보시오</a></li>
+            <!-- mobile 기기에서 테스트 가능한 기능 -->
+            <li><a href="tel:010-0000-0000">전화걸기</a></li>  <!-- 클릭을 하면 설정한 전화 번호로 전화가 간다. (거의 모바일에서 사용한다.) -->
+            <li><a href="mailto:aaa@naver.com">이메일 쓰기</a></li>  <!-- 클릭을 하면 설정한 이메일 쓰기가 가능해진다. (거의 모바일에서 사용하는것 같다.) -->
+        </ul>
+        <div class="spacer"></div>
+        <p id="one">one 입니다.</p>  <!-- [책갈피 기능]: p id="xx" 을 설정 하면 웹 브라우저에서 id에 적은 위치로 이동이 된다. -->
+        <div class="spacer"></div>
+        <p id="two">two 입니다.</p>
+        <div class="spacer"></div>
+        <p id="three">three 입니다.</p>
+    </div>
+</body>
+</html>

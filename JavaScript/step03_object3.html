@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_object3.html</title>
+</head>
+<body>
+    <script>
+        var car1={
+            name:"소나타",
+            color:"silver",
+            driver:function(){
+                alert(this.name+" 이(가) 달려요.");
+            }
+        };
+        var car2={
+            name:"산타페",
+            color:"white",
+            driver:function(){
+                alert(this.name+" 이(가) 달려요.");
+            }
+        };
+        var car3={};  // 이건 빈 object를 만들어서 나중에 정보를 추가 한 형식이다.
+        car3.name="포터";
+        car3.color="bule";
+        car3.drive=function(){
+            alert(this.name+" 이(가) 달려요.")
+        };
+        // car1 object 의 특정방 참조
+        var a=car1.name;
+        var b=car1.color;
+        // car2 object 의 특정방 참조
+        var c=car2.name;
+        var d=car2.color;
+        // car1, car2 object 에 있는 driver() 함수 호출
+        car1.drive();
+        car2.drive();
+    </script>
+</body>
+</html>

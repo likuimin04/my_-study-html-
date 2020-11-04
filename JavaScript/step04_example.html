@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_example.html</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <button onclick="change();">바꾸기</button>
+    <script>
+        function change(){
+        document.querySelectorAll("div")[0].innerText="어서오시게";
+        document.querySelectorAll("div")[1].innerText="자네 왔나?";
+        document.querySelectorAll("div")[2].style.color="red";
+        document.querySelectorAll("div")[3].innerText="근황은 어떠오?";
+        document.querySelectorAll("div")[4].innerText="살만하제?";
+
+        let four=document.querySelectorAll("div")[3];
+        four.innerText="4번쨰 div"
+        four.style.color="green";
+        }
+    </script>
+</body>
+</html>

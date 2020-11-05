@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step06_quiz.html</title>
+</head>
+<body>
+    <h1>array type 테스트중....</h1>
+    <input type="text" id="inputName" placeholder="이름입력...."/>
+    <button onclick="saveToArray();">배열에 저장하기</button>
+    <button onclick="pringToConsole()">저장된 내용 콘솔에 순서대로 출력하기</button>
+    <script>
+        // 입력한 이름을 저장할 예정인 배열(array) 미리 만들어 놓기
+        let names=[];
+        
+        // 1. 배열에 저장을 시켜야한다.
+
+        // 2. 저장된 내용을 콘솔에 순서대로 출력해야한다.
+        function saveToArray(){
+            a=document.querySelector("#inputName").value;
+            names.push(a)
+        }
+        function pringToConsole(){
+            for(let i=0;i<names.length;i++)
+            console.log(names[i]);
+        }
+    </script>
+</body>
+</html>

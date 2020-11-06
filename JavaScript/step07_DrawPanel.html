@@ -13,6 +13,8 @@
 <body>
     <h1>그림판</h1>
     <canvas id="myCanvas" width="500" height="500"></canvas>
+    <br/>
+    <input type="color" id="inputColor"/>
     <script>
         // canvas 요소의 참조값 얻어오기
         let canvas=document.querySelector("#myCanvas");
@@ -25,8 +27,10 @@
         context.lineCap="round";
         // 선 교차점을 둥글게
         context.lineJoin="round";
+        // 선의 색상을 저장할 변수를 만들고 "black" 으로 초기화
+        let color="black";
         // 선의 색상
-        context.strokeStyle="red";
+        context.strokeStyle="color";
 
         //context.beginPath();  // 시작
         //context.moveTo(100,100);  // 0에서 100 좌표로 옴기는 것 
@@ -35,21 +39,42 @@
         //context.stroke();         //
         //context.closePath();  // 끄기
 
-        canvas.addEventListener("mousedown",function(event){
+        // 현재 그림을 그리고 있는지 여부
+        let isDraw=false; // 초기값은 일단 false 로 지정 하여 수정
+
+        canvas.addEventListener("mousedown",function(event){   // 코드 순서 1 번 시작점
+            //그리고 있는 상태로 바꿔준다.
+            isDraw=true;
             //이벤트가 일어난 곳의 좌표
             let x=event.offsetX;
             let y=event.offsetY;
             //mousedown 이벤트가 일어난 지점에서 부터 그릴 준비를 한다.
             context.beginPath();
             context.moveTo(x,y);
+            // 변수에 저장된 값으로 색상 지정
+            context.strokeStyle=color;
+        });
+        // canvas 에 mosemove 이벤트 처리
+        canvas.addEventListener("mousemove",function(event){   // 코드 순서 2 번 라인 연결
+            // 만일 현재 그림을 그리고 있는 상태 일때
+            if(isDraw == true){
+                //이벤트가 일어난 곳의 좌표
+                let x=event.offsetX;
+                let y=event.offsetY;
+                context.lineTo(x,y);
+                context.stroke();
+            }
         });
 
-        canvas.addEventListener("mousemove",function(event){
-            //이벤트가 일어난 곳의 좌표
-            let x=event.offsetX;
-            let y=event.offsetY;
-            context.lineTo(x,y);
-            context.stroke();
+        canvas.addEventListener("mouseup",function(){   // 코드 순서 마지막 마우스를 때었을 때 그려지지 않기
+            //더이상 그려지지 않도록 상태값을 바꿔준다.
+            isDraw=false;
+        });
+
+        document.querySelector("#inputColor")
+        .addEventListener("change",function(){
+            //color 변수에 현재 value 값을 대입한다.
+            color=this.value;
         });
     </script>
 </body>

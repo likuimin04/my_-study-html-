@@ -4,17 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>step07_EventListener.html</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color:mediumspringgreen;
+            color:green;
+            border: 2px dashed greenyellow;  /* border:경계선 / 1px 선 두깨 / solid 선 디지인 / 색깔 */
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+            color: cyan;
+            border: 2px dashed purple;
+        }
+    </style>
 </head>
 <body>
     <h1>EventListener 테스트</h1>
     <button onclick="clicked();">눌러보셈</button>
     <button id="myBtn">눌러보셈2</button>
+    <div class="box1" id="myDiv"></div>
+    <div class="box2" id="myDiv2"></div> <!-- class는 여러 요소를 만들 수 있다.-->
+    <div class="box3"></div>
 
     <script>
         // 이 함수는 버튼을 클릭 했을 때 호출이 된다.
         function clicked(){
             alert("버튼을 눌렀네요?");
         }
+        // 이 방법은 글로벌 영역에 아무것도 만들어 지지 않은 형식이다.
+        // "myBtn"에 "click"이라는 이벤트를 하였을때 뒤에 작성한 function을 호출시켜주세요 하는 것이다.
+        // 이제는 무슨 작업을 하더라도 이 방식으로 로컬 영역에다가 만드는것을 해야한다.
+        document.querySelector("#myBtn").addEventListener("click",function(){
+            alert("버튼을 눌렀네요?");
+        }); // 이걸  callback 함수라고 불린다.
+
+        // id 가  myDiv 인 요소에 "click" 이벤트가 일어나면 호출되는 함수 등록
+        document.querySelector("#myDiv").addEventListener("click",function(){
+            //document.querySelector("#myDiv").innerText="click!";
+            this.innerText="clicked!";  //여기서 this는 document.querySelector("#myDiv")를 가리키는 것이다.
+            // 쉽게 말해서 this는 이벤트가 일어난 바로 그 요소를 가리키는 것이다. 이해가 어렵다면 그냥 외워라.
+        });
+
+        document.querySelector("#myDiv2").addEventListener("click",function(){
+            document.querySelector("#myDiv2").innerText="Oh My God!!!";
+        });
 
         let myName="김구라";
         

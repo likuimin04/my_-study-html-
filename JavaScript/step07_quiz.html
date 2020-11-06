@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step07_quiz.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            color:green;
+            border: 1px dashed mediumseagreen;
+            float: left;  /* 좌로 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 테스트 중.....</h1>>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        /* 힌트
+        1.for
+        2. document.querySelectorAll("div")[i].addEventListerner();
+        3. this.innerText="clicked";
+        */
+        // 반복문 돌면서
+        for(let i=0;i<20;i++){   // 문제 푼 것 중에 유일하게 성공 한 문
+            // 모든 div 요소에 click 이벤트가 일어났을때 실행 할 수 함수르 등록한다.
+            document.querySelectorAll("div")[i].addEventListener("click",function(){
+            this.innerText="clicked!";
+            });
+        }
+        // for(let i=0;i<document.querySelectorAll("div").length;i++){
+        // length방법: for(let i=0;i<document.querySelectorAll("div").length;i++){
+            /* 
+            두번 쓰지 않고 length사용 방법: 
+            let divs=document.querySelectorAll("div")
+            for(let i=0;i<div.length;i++){
+            */
+
+        //글로벌 영역에 만들지 말고 로컬 영역에 만들려고 하면.
+        (function(){
+            for(let i=0;i<20;i++){
+                document.querySelectorAll("div")[i].addEventListener("click",function(){
+                this.innerText="clicked!";
+                });
+            } 
+        })();
+
+
+        //forEach 를 사용한 방법 (이해 못했음 그래서 연구 할 필요가 있음.)
+        let arr=document.querySelectorAll("div");
+        arr.forEach(function(item,index){
+            document.querySelectorAll("div")[index].addEventListener("click",function(){
+                this.innerText="clicked!";
+            });
+        });       
+    </script>
+</body>
+</html>

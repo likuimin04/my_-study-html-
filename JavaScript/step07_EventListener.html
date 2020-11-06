@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step07_EventListener.html</title>
+</head>
+<body>
+    <h1>EventListener 테스트</h1>
+    <button onclick="clicked();">눌러보셈</button>
+    <button id="myBtn">눌러보셈2</button>
+
+    <script>
+        // 이 함수는 버튼을 클릭 했을 때 호출이 된다.
+        function clicked(){
+            alert("버튼을 눌렀네요?");
+        }
+
+        let myName="김구라";
+        
+        // 이 함수는 1회용 함수이다. 한번 호출 하면 다음번에 호출이 불가능하다.
+        (function(){
+            let yourName="해골";
+        })();
+
+        // 이 함수는 test가 호출 될때 호출이 된다.
+        function test(){
+            let ourName="원숭이";
+        }
+    </script>
+</body>
+</html>

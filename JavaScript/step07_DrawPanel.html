@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step07_DrawPanel.html</title>
+    <style>
+        canvas{
+            border: 1px dashed black
+        }
+    </style>
+</head>
+<body>
+    <h1>그림판</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        // canvas 요소의 참조값 얻어오기
+        let canvas=document.querySelector("#myCanvas");
+        // canvas 에 렌더링 할 수 있는 도구(context) 의 참조값 얻어오기 
+        let context=canvas.getContext("2d");
+
+        // 선의 굵기
+        context.lineWidth=10;
+        // 선 시작과 끝을 둥글게
+        context.lineCap="round";
+        // 선 교차점을 둥글게
+        context.lineJoin="round";
+        // 선의 색상
+        context.strokeStyle="red";
+
+        //context.beginPath();  // 시작
+        //context.moveTo(100,100);  // 0에서 100 좌표로 옴기는 것 
+        //context.lineTo(200,200);  // 라인의 연결 위치
+        //context.lineTo(200,100);  // 라인의 연결 위치
+        //context.stroke();         //
+        //context.closePath();  // 끄기
+
+        canvas.addEventListener("mousedown",function(event){
+            //이벤트가 일어난 곳의 좌표
+            let x=event.offsetX;
+            let y=event.offsetY;
+            //mousedown 이벤트가 일어난 지점에서 부터 그릴 준비를 한다.
+            context.beginPath();
+            context.moveTo(x,y);
+        });
+
+        canvas.addEventListener("mousemove",function(event){
+            //이벤트가 일어난 곳의 좌표
+            let x=event.offsetX;
+            let y=event.offsetY;
+            context.lineTo(x,y);
+            context.stroke();
+        });
+    </script>
+</body>
+</html>

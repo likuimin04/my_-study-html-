@@ -13,6 +13,8 @@ Font-Size
     <style>
         canvas{
             border: 1px dashed gray;
+            cursor:crosshair;
+            /* crosshair (십자가 형태), not-allowed (위험 표식) */
         }
     </style>
 </head>
@@ -89,7 +91,7 @@ Font-Size
                 let x=event.offsetX;
                 let y=event.offsetY;
                 if(isErase){ //만일 지우는 작업 상태이면 
-                    context.clearRect(x, y, 10, 10);
+                    context.clearRect(x, y, 50, 50);
                 }else{//지우는 작업 상태가 아니라면 (그리는 상태라면)
                     context.lineTo(x, y);
                     context.stroke();
@@ -128,6 +130,13 @@ Font-Size
             .addEventListener("change", function(){
                 //체크여부를 (true or false) 변수에 담는다.
                 isErase=this.checked;
+                if(isErase){
+                    document.querySelector("#myCanvas")
+                    .style.cursor="not-allowed";
+                }else{
+                    document.querySelector("#myCanvas")
+                    .style.cursor="crosshair";
+                }
             });
     </script>
 </body>

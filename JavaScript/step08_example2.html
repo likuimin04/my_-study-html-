@@ -32,6 +32,16 @@
                 document.querySelector("#result").innerText="인증이 실패하였습니다. 다시 입력해 주시기 바랍니다.";
             };
         });
+        document.querySelector("authBen")
+        .addEventListener("click",function(){
+            let id=document.querySelector("#inputId").value;
+            let pwd=document.querySelector("#inputPwd").value;
+            if(id!="gura"||pwd!="1234"){
+                document.querySelector("#result").innerText="인증 실패!! 까비!!";
+            }else{
+                document.querySelector("#result").innerText="인증 성공!! 수고링!!";
+            }
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step09_createElement4.html</title>
+    <style>
+        table{
+            border: 2px dotter #000000;
+            background-color: pink;
+            font-weight: normal;
+        }
+        th{
+            background-color: Beige;
+            font-weight: bold;
+        }
+        td{
+            background-color:White;
+            color: gray;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body>
+    <h1> 다양한 구조의 요소 만들기</h1>
+    <br/>
+    <button id="showBtn">출력하기</button>
+    <br/>
+    <table border="1" cellspacing="1">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+                <th>전화번호</th>
+            </tr>
+        </thead>
+        <tbody id="one">
+
+        </tbody>
+    </table>
+    <script>
+        let obj={name:"김구라",addr:"노량진",nums:"010-0000-0000"};
+        /*
+            <tr>
+                <td>김구라</td>
+                <td>노량진</td>
+            </tr>
+        */
+        document.querySelector("#showBtn").addEventListener("click",function(){
+            let td1=document.createElement("td");
+            let td2=document.createElement("td");
+            let td3=document.createElement("td");
+            let tr=document.createElement("tr");
+            td1.innerText=obj.name;
+            td2.innerText=obj.addr;
+            td3.innerText=obj.nums;
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            document.querySelector("#one").append(tr);
+        });
+        /*
+        let td1=document.createElement("td");
+        let td2=document.createElement("td");
+        let tr=document.createElement("tr");
+        td1.innerText=obj.name;
+        td2.innerText=obj.addr;
+        tr.append(td1);
+        tr.append(td2);
+        document.querySelector("#one").append(tr);
+        */
+    </script>
+</body>
+</html>

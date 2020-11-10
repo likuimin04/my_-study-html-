@@ -21,11 +21,18 @@
          */
          let friends=["김구라","해골","원숭이","주뎅이","덩어리"];
          document.querySelector("#showBtn").addEventListener("click",function(){
+            /*
             for(let i=0;i<friends.length;i++){
              let li1=document.createElement("li");
              li1.innerText=friends[i];
              document.querySelector("#one").append(li1);
             }
+            */
+            friends.forEach(function(item,index){
+                let li1=document.createElement("li");
+                li1.innerText=item;
+                document.querySelector("#one").append(li1);
+            });
          });
     </script>
 </body>

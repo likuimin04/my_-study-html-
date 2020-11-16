@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample.html</title>
+    <!-- bootstrap css 로딩 -->
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <!-- jquery,bootstrap js 로딩하기 -->
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+    <!--
+        navbar-expand-xxx : 어느 영역이상에서 navbar 를 편치게 할것인지 지정
+        navbar-expand-lg : large device 이상의 영역, 즉 width 992px 이상
+        navbar-expand-md : medium device 이상의 영역, 즉 width 768px 이상
+        navbar-ligth : 밝은색 계열의 배경색일때 지정 (글자의 밝기를 결정한다.)
+        navbar-dark : 어두운색 계열의 배경색일때 지정 (글자의 밝기를 결정한다.)
+    -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <!-- 좌상단의 대표 아이콘 혹은 대표 링크 -->
+        <a class="navbar-brand" href="#">Kyu's</a>
+        <!-- 
+            우상단에 생기는 메뉴 버튼
+            data-toggle="collapse" 가 있어야 동작을 한다.
+            data-targer="#아이디" 접었다 폈다할 컨텐츠 아이디를 참조 해야한다. 
+        -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 접었다 폈다 할 컨텐츠는 아래의 div 안에 넣어야 한다-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> <span class="sr-only">(current)</span>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                  </svg>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Game</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Sturdy</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+          
+      </div>
+</body>
+</html>
